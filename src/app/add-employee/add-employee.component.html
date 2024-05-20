@@ -1,0 +1,95 @@
+<form  [formGroup]="myForm" (ngSubmit)="onSubmit()" action="">
+  <div class="mat-dialog-container">
+    <table>
+      <tr>
+        <button mat-button mat-dialog-close>X</button>
+      </tr>
+      <tr>
+        <mat-form-field >
+          <input matInput placeholder="FirstName" formControlName="FirstName">
+          <mat-error *ngIf="myForm.get('FirstName')?.hasError('pattern')">
+            only alphabets!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('FirstName')?.hasError('required')">
+            FirstName required!!
+          </mat-error>
+        </mat-form-field>
+          <mat-form-field >
+            <input matInput placeholder="LastName" formControlName="LastName">
+            <mat-error *ngIf="myForm.get('LastName')?.hasError('pattern')">
+              only alphabets!!
+            </mat-error>
+            <mat-error *ngIf="myForm.get('LastName')?.hasError('required')">
+              LastName required!!
+            </mat-error>
+          </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field >
+          <input matInput placeholder="Email" formControlName="Email">
+          <mat-error *ngIf="myForm.get('Email')?.hasError('required')">
+            Email required!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('Email')?.hasError('email')">
+            Enter valid email!!
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field  >
+          <input matInput placeholder="Phone" formControlName="Phone">
+          <mat-error *ngIf="myForm.get('Phone')?.hasError('required')">
+            Phone required!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('Phone')?.hasError('pattern')">
+            valid phone Number!!
+          </mat-error>
+        </mat-form-field>
+        
+      </tr>
+      <tr>
+        <mat-form-field >
+          <input matInput placeholder="EmployeeCode" formControlName="EmployeeCode">
+          <mat-error *ngIf="myForm.get('EmployeeCode')?.hasError('required')">
+            EmployeeCode required!!
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field >
+          <input matInput placeholder="DepartmentID" formControlName="DepartmentID">
+          <mat-error *ngIf="myForm.get('DepartmentID')?.hasError('required')">
+            DepartmentID required!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('DepartmentID')?.hasError('pattern')">
+            enter valid DepartmentID!!
+          </mat-error>
+        </mat-form-field>
+        
+      </tr>
+      <tr>
+        <mat-form-field >
+          <input matInput placeholder="cityID" formControlName="cityID">
+          <mat-error *ngIf="myForm.get('cityID')?.hasError('required')">
+            cityID required!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('cityID')?.hasError('pattern')">
+            enter valid cityID!!
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput placeholder="reportingEmployeeID" formControlName="reportingEmployeeID">
+          <mat-error *ngIf="myForm.get('reportingEmployeeID')?.hasError('required')">
+            reportingEmployeeID required!!
+          </mat-error>
+          <mat-error *ngIf="myForm.get('reportingEmployeeID')?.hasError('pattern')">
+            enter valid reportingEmployeeID!!
+          </mat-error>
+        </mat-form-field>
+        
+      </tr>
+      <tr>
+        <button type="submit" [disabled]="!myForm.valid">Submit</button>
+      </tr>
+    </table>
+  </div>
+  </form>

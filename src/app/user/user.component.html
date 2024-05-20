@@ -1,0 +1,54 @@
+<div class="form-container">
+
+  <div class="serch">
+    <input matInput type="text" placeholder="search by email" [(ngModel)]="searchString" />
+    <button mat-raised-button color="primary" (click)="search()">search</button>
+  </div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>UserID</th>
+        <th>FullName</th>
+        <th>Email</th>
+        <th>Created_Date</th>
+        <th>Changed_Date</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Role</th>
+        <th>delete</th>
+        <th>editUsers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of data">
+        <td>{{ user.userID }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.created_Date | date : "dd-MM-yyyy" }}</td>
+        <td>{{ user.changed_Date | date : "dd-MM-yyyy" }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.city }}</td>
+        <td>{{ user.state }}</td>
+        <td>{{ user.country }}</td>
+        <td>{{ user.role }}</td>
+        <td><button (click)="deletusers(user.userID)">deletUser</button></td>
+        <td><button (click)="editusers(user)">editUsers</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="add-button-container">
+    <button (click)="addUser()">Add User</button>
+  </div>
+  <div class="pageSize">
+    <mat-form-field class="select-input-field">
+      <mat-select [(ngModel)]="pageSizeReader" placeholder="pageSize" (selectionChange)='onSizeSelected($event)'>
+        <mat-option *ngFor="let size of pageSizeOption"
+                    [value]="size.value">{{ size.viewValue }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button (click)="onLeft()" ><</button>
+  <button (click)="onRight()" >></button>
+</div>

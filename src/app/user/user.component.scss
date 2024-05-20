@@ -1,0 +1,68 @@
+/* Resetting default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Button style */
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="text"] {
+  padding: 6px 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Table style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Table header style */
+th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table cell style */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row background color */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for the add button container */
+.add-button-container {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  margin-top: 20px; /* Adjust the space between the table and the buttons */
+}
+
+.pageSize {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.pageSize mat-form-field {
+  margin-left: 10px; /* Add spacing between the button and the select field */
+}

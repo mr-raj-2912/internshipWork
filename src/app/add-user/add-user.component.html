@@ -1,0 +1,101 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" action="">
+  <table>
+    <tr>
+      <button mat-button mat-dialog-close>X</button>
+    </tr>
+    <tr>
+      <mat-form-field>
+        <input matInput placeholder="FullName" formControlName="FullName" />
+        <mat-error *ngIf="myForm.get('FullName')?.hasError('pattern')">
+          only alphabets!!
+        </mat-error>
+        <mat-error *ngIf="myForm.get('FullName')?.hasError('required')">
+          FullName required!!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="select-input-field">
+        <mat-select formControlName="Role"  placeholder="Role">
+          <mat-option [value]="">None</mat-option>
+          <mat-option
+            *ngFor="let role of Roles"
+            [value]="role.roleId"
+            >{{ role.role }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="myForm.get('Role')?.hasError('required')">
+          Role required!!
+        </mat-error>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="Email" />
+        <mat-error *ngIf="myForm.get('Email')?.hasError('required')">
+          Email required!!
+        </mat-error>
+        <mat-error *ngIf="myForm.get('Email')?.hasError('email')">
+          Enter valid email!!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="Password" />
+        <mat-error *ngIf="myForm.get('Password')?.hasError('required')">
+          Password required!!
+        </mat-error>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="Address" />
+        <mat-error *ngIf="myForm.get('Address')?.hasError('required')">
+          Address required!!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="select-input-field">
+        <mat-select formControlName="Country"  placeholder="Country" (selectionChange)='onCountrySelected($event)'>
+          <mat-option [value]="">None</mat-option>
+          <mat-option *ngFor="let Country of Countries" [value]="Country.countryId" >{{ Country.countryName }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="myForm.get('Country')?.hasError('required')">
+          Country required!!
+        </mat-error>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field  class="select-input-field">
+        <mat-select formControlName="State"  placeholder="State" (selectionChange)='onStateSelected($event)'>
+          <mat-option [value]="">None</mat-option>
+          <mat-option
+            *ngFor="let State of States"
+            [value]="State.stateId"
+            >{{ State.stateName }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="myForm.get('State')?.hasError('required')">
+          State required!!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="select-input-field">
+        <mat-select formControlName="City"  placeholder="City">
+          <mat-option [value]="">None</mat-option>
+          <mat-option
+            *ngFor="let City of Cities"
+            [value]="City.cityId"
+            >{{ City.cityName }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="myForm.get('City')?.hasError('required')">
+          City required!!
+        </mat-error>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <button class="btn" type="submit">Submit</button>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,39 @@
+<div class="form-container">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>EmployeeID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>EmployeeCode</th>
+                <th>DepartmentID</th>
+                <th>Joining_date</th>
+                <th>cityID</th>
+                <th>reportingEmployeeID</th>
+                <th>editEmployee</th>
+                <th>deleteEmployee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of data">
+                <td>{{employee.employeeID}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.employeeCode}}</td>
+                <td>{{employee.departmentID}}</td>
+                <td>{{employee.joining_date}}</td>
+                <td>{{employee.cityID}}</td>
+                <td>{{employee.reportingEmployeeID}}</td>
+                <td><button (click)="editEmployee(employee)">editEmployee</button></td>
+                <td><button (click)="deletEmployee(employee.employeeID)">deletEmployee</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="add-button-container">
+        <button (click)="addEmployee()">Add Employee</button>
+     </div>
+</div>

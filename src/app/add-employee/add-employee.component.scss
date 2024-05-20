@@ -1,0 +1,72 @@
+/* Styling the dialog container */
+.mat-dialog-container {
+    max-height: 80vh; /* Adjust as needed */
+    max-width: 80vw; /* Adjust as needed */
+    overflow: auto; /* Enable scrolling if content exceeds the viewport */
+    padding: 2em; /* Add padding for better readability */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* Light background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Styling the form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling table rows */
+  tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em; /* Add some space between rows */
+  }
+  
+  /* Styling form fields */
+  mat-form-field {
+    width: 45%; /* Adjust the width of form fields */
+  }
+  
+  /* Styling buttons */
+  button {
+    min-width: 120px; /* Set a minimum width for buttons */
+    padding: 0.8em 1.5em; /* Add padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }
+  
+  /* Styling error messages */
+  mat-error {
+    font-size: 0.8em;
+    color: #ff0000; /* Red color for error messages */
+  }
+  
+  /* Hover effect for dialog container */
+  .mat-dialog-container:hover {
+    transform: translateY(-5px); /* Move the dialog box slightly up on hover */
+  }
+  
+  /* Fade-in animation for dialog container */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .mat-dialog-container {
+    animation: fadeIn 0.5s ease; /* Apply fade-in animation */
+  }
+ 
